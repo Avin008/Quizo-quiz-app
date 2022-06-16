@@ -1,3 +1,7 @@
-.App {
-  text-align: center;
+:root {
+  --light-mode: #e4823a;
+  --dark-mode: #3a2d32;
+  --primary-color: white;
+  --secondary-color: black;
+  --color-white: white;
 }

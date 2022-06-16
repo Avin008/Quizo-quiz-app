@@ -1,9 +1,10 @@
 import "./App.css";
+import { Homepage } from "./pages";
 
 function App(): JSX.Element {
   return (
     <div className="App">
-      <h1>Hello World</h1>
+      <Homepage />
     </div>
   );
 }
