@@ -1,0 +1,26 @@
+.category-card {
+  border: 1px solid gray;
+  width: 200px;
+  height: fit-content;
+  color: white;
+  background: #382933;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.card-head {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.category-img {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+.category-card:hover {
+  transform: scale(1.05);
+}

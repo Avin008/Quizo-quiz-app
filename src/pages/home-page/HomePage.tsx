@@ -1,12 +1,17 @@
-import { Navbar } from "../../components";
+import { CategoryCard } from "../../components";
 import "./home-page.css";
 
-const Homepage = () => {
+const HomePage = () => {
   return (
     <div className="homepage">
-      <Navbar />
+      {/* <h1 className="homepage-title">Categories</h1> */}
+      <div className="category-container">
+        <CategoryCard />
+        <CategoryCard />
+        <CategoryCard />
+      </div>
     </div>
   );
 };
 
-export default Homepage;
+export default HomePage;

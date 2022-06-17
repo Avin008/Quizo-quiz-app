@@ -6,6 +6,10 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .nav-items {
@@ -20,6 +24,8 @@
   display: flex;
   align-items: center;
   gap: 0.2rem;
+  text-decoration: none;
+  color: white;
 }
 
 .brand {
@@ -34,12 +40,12 @@
 
 .nav-dark-mode {
   background-color: var(--dark-mode);
-  transition: 20ms;
+  transition: 10ms;
 }
 
 .nav-light-mode {
   background-color: var(--light-mode);
-  transition: 20ms;
+  transition: 10ms;
 }
 
 .nav-icons {

@@ -1,0 +1,58 @@
+.form-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.form {
+  border: 1px solid gray;
+  width: 320px;
+  background: var(--dark-mode);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  gap: 0.5rem;
+  height: fit-content;
+}
+
+.form-heading {
+  color: white;
+  font-weight: 500;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  width: 100%;
+  gap: 0.2rem;
+}
+
+.input {
+  padding: 0.5rem;
+  outline: none;
+}
+
+.checkbox {
+  display: flex;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.label {
+  width: fit-content;
+}
+
+.checkbox {
+  display: flex;
+}
+
+.signup-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
