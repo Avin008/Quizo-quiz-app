@@ -1,0 +1,82 @@
+.single-quiz-card {
+  background: var(--dark-mode);
+  width: 600px;
+  height: fit-content;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.head {
+  border-bottom: 1px solid gray;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.head-title {
+  color: #f9f2ed;
+}
+
+.time-container {
+  border: 1px solid gray;
+  height: 30px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+}
+
+.time {
+  color: white;
+}
+
+.body {
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.question {
+  color: white;
+  font-weight: 500;
+}
+
+.options-container {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.options {
+  border: 1px solid gray;
+  padding: 0.5rem;
+  color: whitesmoke;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.options:hover {
+  background-color: gray;
+  cursor: pointer;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.question-count {
+  color: white;
+}
+
+.next-question-btn {
+  padding: 0.3rem 1rem;
+  border: 0;
+}

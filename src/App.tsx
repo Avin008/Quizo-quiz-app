@@ -6,7 +6,9 @@ import {
   SharedLayout,
   LoginPage,
   SignupPage,
+  SingleQuizPage,
 } from "./pages";
+import QuizPage from "./pages/quiz-page/QuizPage";
 
 function App(): JSX.Element {
   return (
@@ -15,6 +17,8 @@ function App(): JSX.Element {
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<HomePage />} />
           <Route path="leaderboard" element={<LeaderBoardPage />} />
+          <Route path="/quizes/:id" element={<QuizPage />} />
+          <Route path="/quiz" element={<SingleQuizPage />} />
           <Route path="login" element={<LoginPage />} />
           <Route path="signup" element={<SignupPage />} />
         </Route>

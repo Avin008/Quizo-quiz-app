@@ -5,7 +5,7 @@
 }
 
 .form {
-  border: 1px solid gray;
+  /* border: 1px solid gray; */
   width: 320px;
   background: var(--dark-mode);
   display: flex;
@@ -17,14 +17,14 @@
 }
 
 .form-heading {
-  color: white;
+  color: var(--color-white);
   font-weight: 500;
 }
 
 .input-group {
   display: flex;
   flex-direction: column;
-  color: white;
+  color: var(--color-white);
   width: 100%;
   gap: 0.2rem;
 }
@@ -32,6 +32,9 @@
 .input {
   padding: 0.5rem;
   outline: none;
+  background-color: #e1e1e1;
+  border: 0;
+  /* border: 1px solid #a69e9b; */
 }
 
 .checkbox {

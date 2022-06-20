@@ -1,0 +1,14 @@
+.quiz-page {
+  /* margin-top: 5rem; */
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  align-items: center;
+  height: 100vh;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}

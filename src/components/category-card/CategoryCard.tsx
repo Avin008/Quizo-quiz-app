@@ -1,24 +1,32 @@
 import "./category-card.css";
-import { FcCurrencyExchange } from "react-icons/fc";
+import { Link } from "react-router-dom";
+import { FcCurrencyExchange } from "../../icons/icons";
 
-const CategoryCard = () => {
+type Props = {
+  data: {
+    id: string;
+    categoryName: string;
+    questionCount: number;
+    img: string;
+  };
+};
+
+const CategoryCard = ({ data }: Props) => {
   return (
-    <div className="category-card">
-      <div className="card-head">
-        <img
-          className="category-img"
-          src="https://img.wallpapersafari.com/tablet/768/1024/53/30/WlcwaZ.jpg"
-          alt=""
-        />
+    <Link className="link" to={`quizes/${data.id}`}>
+      <div className="card">
+        <div className="card-head">
+          <img className="card-img" src={data.img} alt={data.categoryName} />
+        </div>
+        <div className="card-body">
+          <h2>{data.categoryName}</h2>
+          <h5>5 Shows</h5>
+          <h5>
+            Win 100 Coins <FcCurrencyExchange />
+          </h5>
+        </div>
       </div>
-      <div className="card-body">
-        <h2>Anime Quiz</h2>
-        <h5>5 Shows</h5>
-        <h5>
-          Win 100 Coins <FcCurrencyExchange />
-        </h5>
-      </div>
-    </div>
+    </Link>
   );
 };
 
