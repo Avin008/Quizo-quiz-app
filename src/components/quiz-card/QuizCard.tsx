@@ -13,9 +13,9 @@ const QuizCard = () => {
           />
         </div>
         <div className="card-body">
-          <h2>Death Note</h2>
-          <h5>10 Questions</h5>
-          <h5>Win 50 Coins </h5>
+          <h2 className="card-heading">Death Note</h2>
+          <h5 className="card-sub-heading">10 Questions</h5>
+          <h5 className="card-sub-heading">Win 50 Coins </h5>
         </div>
       </div>
     </Link>

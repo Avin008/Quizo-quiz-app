@@ -19,10 +19,10 @@ const CategoryCard = ({ data }: Props) => {
           <img className="card-img" src={data.img} alt={data.categoryName} />
         </div>
         <div className="card-body">
-          <h2>{data.categoryName}</h2>
-          <h5>5 Shows</h5>
-          <h5>
-            Win 100 Coins <FcCurrencyExchange />
+          <h2 className="card-heading">{data.categoryName}</h2>
+          <h5 className="card-sub-heading">5 Shows</h5>
+          <h5 className="card-sub-heading">
+            Win 100 Coins <FcCurrencyExchange className="card-icon" />
           </h5>
         </div>
       </div>

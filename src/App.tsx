@@ -7,8 +7,8 @@ import {
   LoginPage,
   SignupPage,
   SingleQuizPage,
+  QuizPage,
 } from "./pages";
-import QuizPage from "./pages/quiz-page/QuizPage";
 
 function App(): JSX.Element {
   return (

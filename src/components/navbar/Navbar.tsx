@@ -22,7 +22,7 @@ const Navbar = (): JSX.Element => {
       }`}
     >
       <div className="brand">
-        <FcViewDetails className="nav-brand-icon" />
+        <FcViewDetails className="brand-icon" />
         <h2 className="brand-name">Quizo</h2>
       </div>
       <ul className="nav-items">

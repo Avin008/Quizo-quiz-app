@@ -1,10 +1,11 @@
 import "./single-quiz-page.css";
-import { SingleQuizCard } from "../../components";
+import { RulesCard, SingleQuizCard } from "../../components";
 
 const SingleQuizPage = () => {
   return (
     <div className="single-quiz-page">
       <SingleQuizCard />
+      {/* <RulesCard /> */}
     </div>
   );
 };

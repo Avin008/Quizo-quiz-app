@@ -4,13 +4,13 @@ import { MdCheckCircleOutline, CgCloseO } from "../../icons/icons";
 const SingleQuizCard = () => {
   return (
     <div className="single-quiz-card">
-      <div className="head">
-        <h2 className="head-title">Dragon Ball Z Quiz</h2>
+      <div className="card-head">
+        <h2 className="card-title">Dragon Ball Z Quiz</h2>
         <div className="time-container">
-          <h3 className="time">10</h3>
+          <h3 className="time-counter">10</h3>
         </div>
       </div>
-      <div className="body">
+      <div className="card-body">
         <h3 className="question">
           1. Lorem ipsum dolor sit amet consectetur, adipisicing elit. In, est.
         </h3>
