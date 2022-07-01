@@ -38,31 +38,6 @@ const LeaderBoardPage = () => {
             <h5>1</h5>
             <h5>300</h5>
           </div>
-          <div className="leaderboard-col">
-            <h5>gamertank</h5>
-            <h5>1</h5>
-            <h5>300</h5>
-          </div>
-          <div className="leaderboard-col">
-            <h5>gamertank</h5>
-            <h5>1</h5>
-            <h5>300</h5>
-          </div>
-          <div className="leaderboard-col">
-            <h5>gamertank</h5>
-            <h5>1</h5>
-            <h5>300</h5>
-          </div>
-          <div className="leaderboard-col">
-            <h5>gamertank</h5>
-            <h5>1</h5>
-            <h5>300</h5>
-          </div>
-          <div className="leaderboard-col">
-            <h5>gamertank</h5>
-            <h5>1</h5>
-            <h5>300</h5>
-          </div>
         </div>
       </div>
     </div>
