@@ -2,18 +2,19 @@ import "./category-card.css";
 import { Link } from "react-router-dom";
 import { FcCurrencyExchange } from "../../icons/icons";
 
-type Props = {
-  data: {
-    id: string;
-    categoryName: string;
-    questionCount: number;
-    img: string;
-  };
-};
+// type Props = {
+//   data: {
+//     id: string;
+//     categoryName: string;
+//     questionCount: number;
+//     img: string;
+//   };
+// };
 
-const CategoryCard = ({ data }: Props) => {
+const CategoryCard = ({ data }) => {
+  console.log(data.categoryName);
   return (
-    <Link className="link" to={`quizes/${data.id}`}>
+    <Link className="link" to={`quizes/${data.categoryName}`}>
       <div className="card">
         <div className="card-head">
           <img className="card-img" src={data.img} alt={data.categoryName} />

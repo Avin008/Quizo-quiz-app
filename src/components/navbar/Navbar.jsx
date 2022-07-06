@@ -1,5 +1,4 @@
 import "./navbar.css";
-import { useState } from "react";
 import {
   FcViewDetails,
   BiUserCircle,
@@ -8,10 +7,10 @@ import {
 } from "../../icons/icons";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import type { RootState } from "../../app/store";
+// import type { RootState } from "../../app/store";
 import { toggleTheme } from "../../features/toggle-theme/toggle-theme-slice";
-const Navbar = (): JSX.Element => {
-  const { darkMode } = useSelector((store: RootState) => store.theme);
+const Navbar = () => {
+  const { darkMode } = useSelector((store) => store.theme);
   const dispatch = useDispatch();
 
   return (

@@ -1,3 +1,6 @@
+import "./App.css";
+import Mockman from "mockman-js";
+
 import { Route, Routes } from "react-router";
 import "./App.css";
 import {
@@ -10,19 +13,20 @@ import {
   QuizPage,
 } from "./pages";
 
-function App(): JSX.Element {
+function App() {
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<HomePage />} />
           <Route path="leaderboard" element={<LeaderBoardPage />} />
-          <Route path="/quizes/:id" element={<QuizPage />} />
-          <Route path="/quiz" element={<SingleQuizPage />} />
+          <Route path="/quizes/:category" element={<QuizPage />} />
+          <Route path="/quiz/:id" element={<SingleQuizPage />} />
           <Route path="login" element={<LoginPage />} />
           <Route path="signup" element={<SignupPage />} />
         </Route>
       </Routes>
+      <Mockman colorScheme="white" />
     </div>
   );
 }
