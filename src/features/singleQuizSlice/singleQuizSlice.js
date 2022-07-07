@@ -18,6 +18,11 @@ const initialState = {
 const singleQuizSlice = createSlice({
   name: "singleQuiz",
   initialState,
+  reducers: {
+    loadingFunc: (state) => {
+      state.loading = true;
+    },
+  },
   extraReducers: {
     [getSingleQuiz.pending]: (state) => {
       state.loading = true;
@@ -33,3 +38,4 @@ const singleQuizSlice = createSlice({
 });
 
 export default singleQuizSlice.reducer;
+export const { loadingFunc } = singleQuizSlice.actions;

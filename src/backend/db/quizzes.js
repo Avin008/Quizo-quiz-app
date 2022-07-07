@@ -43,9 +43,14 @@ export const quizzes = [
     mcqs: [
       {
         _id: "dddcd7a2",
-        question: "Which season Harvey is the Most Badass One",
-        options: ["Leleouch", "Season 2", "Season 6", "Every Season"],
-        answer: "Every Season",
+        question: "Lelouch's father was",
+        options: [
+          "Zenith Zi Britannia",
+          "Charles Zi Britannia",
+          "Harry Zi Britannia",
+          "William Zi Britannia",
+        ],
+        answer: "Charles Zi Britannia",
       },
       {
         _id: "93664683",

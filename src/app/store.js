@@ -4,6 +4,8 @@ import categoryData from "../features/categorySlice/categorySlice";
 import quizSlice from "../features/quizSlice/quizSlice";
 import singleQuizSlice from "../features/singleQuizSlice/singleQuizSlice";
 import questionSlice from "../features/questionSlice/questionSlice";
+import loginSlice from "../features/loginSlice/loginSlice";
+import signupSlice from "../features/signupSlice/signupSlice";
 
 export const store = configureStore({
   reducer: {
@@ -12,5 +14,7 @@ export const store = configureStore({
     quiz: quizSlice,
     singleQuiz: singleQuizSlice,
     question: questionSlice,
+    login: loginSlice,
+    signup: signupSlice,
   },
 });
