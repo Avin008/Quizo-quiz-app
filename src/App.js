@@ -26,7 +26,7 @@ function App() {
           <Route path="signup" element={<SignupPage />} />
         </Route>
       </Routes>
-      <Mockman colorScheme="white" />
+      {/* <Mockman colorScheme="white" /> */}
     </div>
   );
 }
