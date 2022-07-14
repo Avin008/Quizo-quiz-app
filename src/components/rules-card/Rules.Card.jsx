@@ -1,6 +1,6 @@
 import "./rules-card.css";
 
-const RulesCard = () => {
+const RulesCard = ({ toggleFunc }) => {
   return (
     <div className="rules-card-container">
       <div className="rules-card">
@@ -16,7 +16,9 @@ const RulesCard = () => {
           </ul>
         </div>
         <div className="card-footer">
-          <button className="card-primary-btn">Start Quiz</button>
+          <button className="card-primary-btn" onClick={() => toggleFunc()}>
+            Start Quiz
+          </button>
         </div>
       </div>
     </div>

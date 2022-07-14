@@ -1,10 +1,6 @@
 import "./single-quiz-card.css";
-import {
-  MdCheckCircleOutline,
-  CgCloseO,
-  AiOutlineCloseCircle,
-} from "../../icons/icons";
-import { useEffect, useReducer, useRef, useState } from "react";
+import { MdCheckCircleOutline, AiOutlineCloseCircle } from "../../icons/icons";
+import { useEffect, useState } from "react";
 
 const SingleQuizCard = ({ data }) => {
   const [quizState, setQuizState] = useState({
@@ -14,12 +10,6 @@ const SingleQuizCard = ({ data }) => {
     userAnswer: "",
     counter: 15,
   });
-
-  // quiz card feature steps
-  // 1. when user click on the option button - set isAnswered = true
-  // 2. if user clicked option === currect answer - increase score, add check icon to right answer, hightlight with green color
-  // 3 if user clicked option !== currect answer - hightlight currect answer with green color
-  // && highlight wrong answer with purple color &&
 
   const checkAnswer = (e) => {
     if (!quizState.isAnswer) {
@@ -41,6 +31,9 @@ const SingleQuizCard = ({ data }) => {
       setQuizState((prev) => ({
         ...prev,
         questionNo: prev.questionNo + 1,
+        isAnswer: false,
+        userAnswer: "",
+        counter: 15,
       }));
     } else {
       setQuizState((prev) => ({
@@ -60,20 +53,11 @@ const SingleQuizCard = ({ data }) => {
 
   const hightlightAnswer = (e) => {
     if (e === data.mcqs[quizState.questionNo].answer) {
-      return "purple";
+      return "#5A8336";
     } else if (e === quizState.userAnswer) {
-      return "green";
+      return "#8E2A2B";
     }
   };
-
-  useEffect(() => {
-    setQuizState((prev) => ({
-      ...prev,
-      isAnswer: false,
-      userAnswer: "",
-      counter: 15,
-    }));
-  }, [quizState.questionNo]);
 
   useEffect(() => {
     const timer =
@@ -83,7 +67,7 @@ const SingleQuizCard = ({ data }) => {
       }, 1000);
 
     if (quizState.counter <= 0) {
-      nextQuestFunc();
+      setQuizState((prev) => ({ ...prev, isAnswer: true }));
     }
 
     return () => {

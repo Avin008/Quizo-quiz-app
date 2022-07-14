@@ -2,8 +2,8 @@ import { Link, useNavigate } from "react-router-dom";
 import "./login-page.css";
 import { BsArrowRightCircle } from "react-icons/bs";
 import { getUserLoggedIn } from "../../features/loginSlice/loginSlice";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 const LoginPage = () => {
   const dispatch = useDispatch();
@@ -13,16 +13,20 @@ const LoginPage = () => {
 
   const loginUser = () => {
     if (loginInfo.email && loginInfo.password) {
-      dispatch(getUserLoggedIn(loginInfo));
+      dispatch(getUserLoggedIn(loginInfo))
+        .unwrap()
+        .then((data) => {
+          navigate("/");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     }
   };
 
   const formFunc = (e) => {
     e.preventDefault();
     loginUser();
-    if (JSON.parse(localStorage.getItem("USER_INFO")).token) {
-      navigate("/");
-    }
   };
 
   const guestLogin = () => {

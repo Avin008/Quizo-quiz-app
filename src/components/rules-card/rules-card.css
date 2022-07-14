@@ -12,11 +12,10 @@
 
 .rules-card {
   width: 600px;
-  border: 1px solid gray;
+  /* border: 1px solid gray; */
   height: 350px;
   background-color: var(--dark-mode);
   position: relative;
-  border-radius: 0.5rem;
 }
 
 .rules-card .card-head {
@@ -57,7 +56,6 @@
   padding: 0.5rem 1rem;
   border: 0;
   background-color: var(--light-mode);
-  border-radius: 0.5rem;
   font-weight: 600;
   cursor: pointer;
 }

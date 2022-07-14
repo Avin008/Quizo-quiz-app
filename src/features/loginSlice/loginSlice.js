@@ -5,15 +5,11 @@ import { useNavigate } from "react-router";
 export const getUserLoggedIn = createAsyncThunk(
   "quiz/login",
   async ({ email, password }) => {
-    try {
       const res = await axios.post("/api/auth/login", {
         email,
         password,
       });
       return res.data;
-    } catch (error) {
-      console.log(error);
-    }
   }
 );
 
@@ -39,10 +35,16 @@ const loginSlice = createSlice({
           totalScore: action.payload.foundUser.totalScore,
         })
       );
-      state.userInfo = JSON.parse(localStorage.getItem("USER_INFO"));
+      state.userInfo = {
+        token: action.payload.encodedToken,
+          email: action.payload.foundUser.email,
+          knowledgeLevel: action.payload.foundUser.knowledgeLevel,
+          quizTaken: action.payload.foundUser.quizTaken,
+          totalScore: action.payload.foundUser.totalScore,
+      }
     },
     [getUserLoggedIn.rejected]: (state) => {
-      console.log(state);
+      console.log('rejected');
     },
   },
 });
