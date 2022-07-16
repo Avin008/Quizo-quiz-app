@@ -1,0 +1,61 @@
+.rules-card-container {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rules-card {
+  width: 600px;
+  /* border: 1px solid gray; */
+  height: 350px;
+  background-color: var(--dark-mode);
+  position: relative;
+}
+
+.rules-card .card-head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+  color: var(--light-mode);
+  padding: 1rem;
+}
+
+.rules-card .card-body {
+  padding: 1rem;
+}
+
+.rules-card .card-items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.rules-card .card-item {
+  color: white;
+  text-decoration: solid;
+}
+
+.rules-card .card-footer {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 1rem;
+}
+
+.rules-card .card-primary-btn {
+  padding: 0.5rem 1rem;
+  border: 0;
+  background-color: var(--light-mode);
+  font-weight: 600;
+  cursor: pointer;
+}
