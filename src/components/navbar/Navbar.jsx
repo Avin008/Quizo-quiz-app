@@ -5,9 +5,27 @@ import {
   MdOutlineLightMode,
   MdOutlineDarkMode,
 } from "../../icons/icons";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { useSelector } from "react-redux";
+import { VscSignOut } from "react-icons/vsc";
+import { signOut } from "firebase/auth";
+import { auth } from "../../firebase/firebaseConfig";
 
 const Navbar = () => {
+  const { auth: authState } = useSelector((store) => store.auth);
+
+  const signoutUser = async () => {
+    await signOut(auth)
+      .then(() => {
+        toast.success("user successfully logged Out");
+      })
+      .catch((error) => {
+        // An error happened.
+        toast.error("signout failed");
+      });
+  };
+
   return (
     <div className={`navbar`}>
       <div className="brand">
@@ -21,14 +39,21 @@ const Navbar = () => {
         <Link to="leaderboard" className="nav-item">
           LEADERBOARD
         </Link>
-        <Link to="login" className="nav-item">
-          <BiUserCircle className="nav-icons" /> SIGN IN
-        </Link>
+        {authState == null ? (
+          <Link to="login" className="nav-item">
+            <BiUserCircle className="nav-icons" /> SIGN IN
+          </Link>
+        ) : (
+          <VscSignOut className="nav-icons" onClick={() => signoutUser()} />
+        )}
         <li className="nav-item">
           {/* {darkMode ? (
             <MdOutlineDarkMode className="nav-item nav-icons" />
           ) : ( */}
-          <MdOutlineLightMode className="nav-item nav-icons" />
+          <MdOutlineLightMode
+            className="nav-item nav-icons"
+            onClick={() => toast.success("hello world")}
+          />
           {/* )} */}
         </li>
       </ul>

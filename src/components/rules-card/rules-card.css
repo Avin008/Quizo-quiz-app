@@ -16,6 +16,8 @@
   height: 350px;
   background-color: var(--dark-mode);
   position: relative;
+  border-radius: 1rem;
+  box-shadow: var(--card-box-shadow);
 }
 
 .rules-card .card-head {
@@ -58,4 +60,5 @@
   background-color: var(--light-mode);
   font-weight: 600;
   cursor: pointer;
+  border-radius: 0.2rem;
 }

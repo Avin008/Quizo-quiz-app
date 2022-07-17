@@ -1,7 +1,24 @@
 import "./leaderboard-page.css";
 import { BsCoin } from "react-icons/bs";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { collection, doc, getDoc, onSnapshot } from "firebase/firestore";
+import { db } from "../../firebase/firebaseConfig";
 
 const LeaderBoardPage = () => {
+  const { auth } = useSelector((store) => store.auth);
+
+  const [coins, setCoins] = useState(0);
+  const [score, setScore] = useState(0);
+
+  useEffect(() => {
+    const docRef = doc(db, "users", auth);
+    getDoc(docRef).then((data) => {
+      setCoins(data.data().coins);
+      setScore(data.data().score);
+    });
+  }, [auth]);
+
   return (
     <div className="leaderboard-page">
       <div className="leaderboard">
@@ -16,11 +33,11 @@ const LeaderBoardPage = () => {
               />
             </div>
             <h5>opplayer5</h5>
-            <h5>Rank 1</h5>
+            <h5>Score : {score}</h5>
             <h5
               style={{ display: "flex", alignItems: "center", gap: "0.2rem" }}
             >
-              <BsCoin /> 300 Coins
+              <BsCoin /> {coins} Coins
             </h5>
           </div>
         </div>
@@ -30,7 +47,7 @@ const LeaderBoardPage = () => {
           </div>
           <div className="leaderboard-col">
             <h4>NAME</h4>
-            <h4>RANK</h4>
+            <h4>Scores</h4>
             <h4>COINS</h4>
           </div>
           <div className="leaderboard-col">

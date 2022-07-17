@@ -1,6 +1,9 @@
 import "./single-quiz-card.css";
 import { MdCheckCircleOutline, AiOutlineCloseCircle } from "../../icons/icons";
 import { useEffect, useState } from "react";
+import { doc, setDoc } from "firebase/firestore";
+import { db } from "../../firebase/firebaseConfig";
+import { useSelector } from "react-redux/es/exports";
 
 const SingleQuizCard = ({ data }) => {
   const [quizState, setQuizState] = useState({
@@ -11,6 +14,13 @@ const SingleQuizCard = ({ data }) => {
     counter: 15,
     coins: 0,
   });
+
+  const { auth } = useSelector((store) => store.auth);
+
+  const updateUserScore = async (score, coins) => {
+    const docRef = doc(db, "users", auth);
+    setDoc(docRef, { score: score, coins: coins });
+  };
 
   const checkAnswer = (e) => {
     if (!quizState.isAnswer) {
@@ -44,6 +54,7 @@ const SingleQuizCard = ({ data }) => {
         coins: quizState.coins,
       }));
       data.toggleFunc(true);
+      updateUserScore(quizState.score, quizState.coins);
     }
   };
 

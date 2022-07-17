@@ -1,8 +1,14 @@
 import { Link, useNavigate } from "react-router-dom";
 import { BsArrowRightCircle } from "react-icons/bs";
 import "./signup-page.css";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { auth, db } from "../../firebase/firebaseConfig";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { toast } from "react-toastify";
+import { doc, setDoc } from "firebase/firestore";
+
 const SignupPage = () => {
+  const navigate = useNavigate();
   const [signupInfo, setSignupInfo] = useState({
     firstName: "",
     lastName: "",
@@ -10,7 +16,23 @@ const SignupPage = () => {
     password: "",
   });
 
-  const signupUser = () => {};
+  const createDoc = async (user) => {
+    const collRef = doc(db, "users", user.user.uid);
+    setDoc(collRef, { coins: 55, score: 99 });
+  };
+
+  const createUser = async (email, password) => {
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((user) => {
+        navigate("/");
+        toast.success("user created successfully");
+        createDoc(user);
+      })
+      .catch((error) => {
+        toast.error(error.code);
+        // ..
+      });
+  };
 
   return (
     <div className="signup-page">
@@ -80,7 +102,10 @@ const SignupPage = () => {
               all terms & conditions
             </label>
           </div>
-          <button className="login-btn" onClick={signupUser}>
+          <button
+            className="login-btn"
+            onClick={() => createUser(signupInfo.email, signupInfo.password)}
+          >
             Sign Up
           </button>
           <Link className="link signup-btn" to="/login">

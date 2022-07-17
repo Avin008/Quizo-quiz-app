@@ -11,8 +11,25 @@ import {
   SingleQuizPage,
   QuizPage,
 } from "./pages";
+import { useEffect } from "react";
+import { onAuthStateChanged } from "firebase/auth";
+import { useDispatch } from "react-redux";
+import { setAuth } from "./redux-toolkit/features/authSlice";
+import { auth } from "./firebase/firebaseConfig";
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        dispatch(setAuth(user.uid));
+      } else {
+        dispatch(setAuth(user));
+      }
+    });
+  }, []);
+
   return (
     <div className="App">
       <Routes>

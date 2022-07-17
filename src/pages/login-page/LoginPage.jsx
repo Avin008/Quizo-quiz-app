@@ -1,20 +1,40 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import "./login-page.css";
 import { BsArrowRightCircle } from "react-icons/bs";
 import { useState } from "react";
+import { toast } from "react-toastify";
+import { auth, db } from "../../firebase/firebaseConfig";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { doc, getDoc } from "firebase/firestore";
 
 const LoginPage = () => {
   const [loginInfo, setLoginInfo] = useState({ email: "", password: "" });
+  const navigate = useNavigate();
+
+  const signinUser = async (email, password) => {
+    await signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        console.log(userCredential);
+        toast.success("user successfully logged in");
+        navigate("/");
+      })
+      .catch((error) => {
+        toast.error(error.code);
+      });
+  };
 
   const loginUser = () => {
     if (loginInfo.email && loginInfo.password) {
-      // dispatch(getUserLoggedIn(loginInfo));
+      signinUser(loginInfo.email, loginInfo.password);
     }
   };
 
   const formFunc = (e) => {
     e.preventDefault();
-    loginUser();
+    if (loginInfo.email && loginInfo.password) {
+      loginUser();
+    }
   };
 
   const guestLogin = () => {

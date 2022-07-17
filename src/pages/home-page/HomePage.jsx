@@ -1,7 +1,9 @@
 import { CategoryCard } from "../../components";
 import "./home-page.css";
 import { useEffect, useState } from "react";
-import { db } from "../../firebase/firebaseConfig";
+import { auth, db } from "../../firebase/firebaseConfig";
+import { onAuthStateChanged } from "firebase/auth";
+
 import {
   collection,
   doc,
@@ -22,6 +24,13 @@ const HomePage = () => {
 
   useEffect(() => {
     getData();
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        console.log(user);
+      } else {
+        console.log(user);
+      }
+    });
   }, []);
 
   return (
