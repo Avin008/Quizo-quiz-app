@@ -1,11 +1,14 @@
 import "./single-quiz-card.css";
 import { MdCheckCircleOutline, AiOutlineCloseCircle } from "../../icons/icons";
 import { useEffect, useState } from "react";
-import { doc, setDoc } from "firebase/firestore";
+import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../../firebase/firebaseConfig";
-import { useSelector } from "react-redux/es/exports";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const SingleQuizCard = ({ data }) => {
+  const navigate = useNavigate();
+
   const [quizState, setQuizState] = useState({
     isAnswer: false,
     score: 0,
@@ -15,11 +18,12 @@ const SingleQuizCard = ({ data }) => {
     coins: 0,
   });
 
-  const { auth } = useSelector((store) => store.auth);
+  const { token } = useSelector((store) => store.auth);
+  const { score, coins } = useSelector((store) => store.score);
 
   const updateUserScore = async (score, coins) => {
-    const docRef = doc(db, "users", auth);
-    setDoc(docRef, { score: score, coins: coins });
+    const docRef = doc(db, "users", token);
+    updateDoc(docRef, { score: score, coins: coins });
   };
 
   const checkAnswer = (e) => {
@@ -54,7 +58,7 @@ const SingleQuizCard = ({ data }) => {
         coins: quizState.coins,
       }));
       data.toggleFunc(true);
-      updateUserScore(quizState.score, quizState.coins);
+      updateUserScore(score + quizState.score, coins + quizState.coins);
     }
   };
 
@@ -108,8 +112,11 @@ const SingleQuizCard = ({ data }) => {
         <ul className="options-container">
           {data.singleQuizData.mcq[quizState.questionNo].options.map((x) => (
             <li
+              key={x}
               className="options"
-              style={{ background: quizState.isAnswer && hightlightAnswer(x) }}
+              style={{
+                background: quizState.isAnswer && hightlightAnswer(x),
+              }}
               onClick={() => {
                 checkAnswer(x);
               }}
@@ -126,9 +133,17 @@ const SingleQuizCard = ({ data }) => {
             Questions
           </h4>
         </div>
-        <button className="next-question-btn" onClick={() => nextQuestFunc()}>
-          Next Ques
-        </button>
+        <div className="card-action-container">
+          <button className="next-question-btn" onClick={() => navigate("/")}>
+            Quit
+          </button>
+          <button className="next-question-btn" onClick={() => nextQuestFunc()}>
+            {data.singleQuizData.mcq.length <= quizState.questionNo + 1 &&
+            quizState.isAnswer
+              ? "View Reult"
+              : "Next Ques"}
+          </button>
+        </div>
       </div>
     </div>
   );

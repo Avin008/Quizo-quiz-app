@@ -4,7 +4,17 @@ import { BiUserCircle } from "react-icons/bi";
 import { FcCurrencyExchange } from "react-icons/fc";
 import { MdCheckCircleOutline } from "react-icons/md";
 import { CgCloseO } from "react-icons/cg";
-import {AiOutlineCloseCircle} from 'react-icons/ai'
+import { AiOutlineCloseCircle } from "react-icons/ai";
+import { BsArrowRightCircle } from "react-icons/bs";
 
-
-export {MdOutlineDarkMode, MdOutlineLightMode, FcViewDetails, BiUserCircle, FcCurrencyExchange, MdCheckCircleOutline, AiOutlineCloseCircle, CgCloseO}
+export {
+  MdOutlineDarkMode,
+  MdOutlineLightMode,
+  FcViewDetails,
+  BiUserCircle,
+  FcCurrencyExchange,
+  MdCheckCircleOutline,
+  AiOutlineCloseCircle,
+  CgCloseO,
+  BsArrowRightCircle,
+};

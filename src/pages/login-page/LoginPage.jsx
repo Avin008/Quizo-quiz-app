@@ -1,25 +1,30 @@
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./login-page.css";
-import { BsArrowRightCircle } from "react-icons/bs";
 import { useState } from "react";
 import { toast } from "react-toastify";
-import { auth, db } from "../../firebase/firebaseConfig";
+import { auth } from "../../firebase/firebaseConfig";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { doc, getDoc } from "firebase/firestore";
+import { useDispatch } from "react-redux";
+import { setAuth } from "../../redux-toolkit/features/authSlice";
+import { ClipLoader } from "react-spinners";
+import { BsArrowRightCircle } from "../../icons/icons";
 
 const LoginPage = () => {
   const [loginInfo, setLoginInfo] = useState({ email: "", password: "" });
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [loading, setLoading] = useState(false);
 
   const signinUser = async (email, password) => {
+    setLoading(true);
     await signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        console.log(userCredential);
+      .then((user) => {
         toast.success("user successfully logged in");
         navigate("/");
+        dispatch(setAuth({ uid: user.user.uid }));
       })
       .catch((error) => {
+        setLoading(false);
         toast.error(error.code);
       });
   };
@@ -38,7 +43,7 @@ const LoginPage = () => {
   };
 
   const guestLogin = () => {
-    setLoginInfo({ email: "adram@gmail.com", password: "123456" });
+    setLoginInfo({ email: "test@gmail.com", password: "test@1234" });
     loginUser();
   };
 
@@ -82,7 +87,8 @@ const LoginPage = () => {
             Login
           </button>
           <button className="login-btn" onClick={guestLogin}>
-            Login As Guest
+            <ClipLoader size={15} loading={loading} />
+            {!loading && "Login As Guest"}
           </button>
 
           <Link className="link signup-btn" to="/signup">

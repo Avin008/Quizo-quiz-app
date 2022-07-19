@@ -1,33 +1,23 @@
 import { QuizCard } from "../../components";
 import "./quiz-page.css";
-import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { collection, onSnapshot, query, where } from "firebase/firestore";
-import { db } from "../../firebase/firebaseConfig";
-
+import { useSelector, useDispatch } from "react-redux";
+import { GridLoader } from "react-spinners";
+import { useEffect } from "react";
+import { getQuizzes } from "../../redux-toolkit/features/quizzesSlice";
 const QuizPage = () => {
   const { id } = useParams();
-
-  const [quizData, setQuizData] = useState([]);
-
-  const getQuizData = async (id) => {
-    const collectionRef = collection(db, "quizzes");
-    const q = query(collectionRef, where("id", "==", id));
-    onSnapshot(q, (data) => {
-      const res = data.docs.map((x) => x.data());
-      setQuizData((prev) => [...prev, ...res]);
-    });
-  };
+  const dispatch = useDispatch();
+  const { isLoading, quizzes } = useSelector((store) => store.quizzes);
 
   useEffect(() => {
-    getQuizData(id);
+    dispatch(getQuizzes(id));
   }, []);
 
   return (
     <div className="quiz-page">
-      {quizData.map((x) => (
-        <QuizCard data={x} />
-      ))}
+      <GridLoader color="white" loading={isLoading} />
+      {!isLoading && quizzes.map((x) => <QuizCard data={x} key={x.qid} />)}
     </div>
   );
 };

@@ -6,9 +6,12 @@ import { auth, db } from "../../firebase/firebaseConfig";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { toast } from "react-toastify";
 import { doc, setDoc } from "firebase/firestore";
+import { setAuth } from "../../redux-toolkit/features/authSlice";
+import { useDispatch } from "react-redux";
 
 const SignupPage = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [signupInfo, setSignupInfo] = useState({
     firstName: "",
     lastName: "",
@@ -18,7 +21,7 @@ const SignupPage = () => {
 
   const createDoc = async (user) => {
     const collRef = doc(db, "users", user.user.uid);
-    setDoc(collRef, { coins: 55, score: 99 });
+    setDoc(collRef, { coins: 55, score: 99, user: signupInfo.firstName });
   };
 
   const createUser = async (email, password) => {
@@ -27,6 +30,7 @@ const SignupPage = () => {
         navigate("/");
         toast.success("user created successfully");
         createDoc(user);
+        dispatch(setAuth({ uid: user.user.uid }));
       })
       .catch((error) => {
         toast.error(error.code);

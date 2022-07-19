@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { onAuthStateChanged } from "firebase/auth";
 
 const initialState = {
-  auth: null,
+  authStatus: localStorage.getItem("token") ? true : false,
+  token: localStorage.getItem("token"),
 };
 
 const authSlice = createSlice({
@@ -10,10 +10,17 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     setAuth: (state, action) => {
-      state.auth = action.payload;
+      state.authStatus = true;
+      state.token = action.payload.uid;
+      localStorage.setItem("token", action.payload.uid);
+    },
+    removeAuth: (state, action) => {
+      state.authStatus = false;
+      state.token = "";
+      localStorage.removeItem("token");
     },
   },
 });
 
 export default authSlice.reducer;
-export const { setAuth } = authSlice.actions;
+export const { setAuth, removeAuth } = authSlice.actions;

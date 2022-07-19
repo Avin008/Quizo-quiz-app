@@ -1,45 +1,28 @@
 import { CategoryCard } from "../../components";
 import "./home-page.css";
-import { useEffect, useState } from "react";
-import { auth, db } from "../../firebase/firebaseConfig";
-import { onAuthStateChanged } from "firebase/auth";
-
-import {
-  collection,
-  doc,
-  getDoc,
-  onSnapshot,
-  QuerySnapshot,
-} from "firebase/firestore";
+import { useDispatch, useSelector } from "react-redux";
+import { getCategoryData } from "../../redux-toolkit/features/categorySlice";
+import { useEffect } from "react";
+import { GridLoader } from "react-spinners";
 
 const HomePage = () => {
-  const [categoryData, setCategoryData] = useState([]);
-
-  const getData = async () => {
-    onSnapshot(collection(db, "category"), (data) => {
-      const getData = data.docs.map((x) => x.data());
-      setCategoryData([...getData]);
-    });
-  };
+  const dispatch = useDispatch();
+  const { category, isLoading } = useSelector((store) => store.category);
 
   useEffect(() => {
-    getData();
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        console.log(user);
-      } else {
-        console.log(user);
-      }
-    });
+    dispatch(getCategoryData());
   }, []);
 
   return (
     <div className="homepage">
-      <div className="category-container">
-        {categoryData.map((x) => (
-          <CategoryCard data={x} />
-        ))}
-      </div>
+      <GridLoader color="white" loading={isLoading} />
+      {!isLoading && (
+        <div className="category-container">
+          {category.map((x) => (
+            <CategoryCard data={x} key={x.id} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

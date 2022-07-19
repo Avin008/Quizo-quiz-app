@@ -9,8 +9,12 @@ const RulesCard = ({ toggleFunc }) => {
         </div>
         <div className="card-body">
           <ul className="card-items">
-            <li className="card-item">Lorem ipsum dolor sit amet. 1</li>
-            <li className="card-item">Lorem ipsum dolor sit amet. 2</li>
+            <li className="card-item">
+              1. for each currect qnswer 10 poinst awarded{" "}
+            </li>
+            <li className="card-item">
+              2. for each question 15 seconds counter
+            </li>
             <li className="card-item">Lorem ipsum dolor sit amet. 3</li>
             <li className="card-item">Lorem ipsum dolor sit amet. 4</li>
           </ul>
