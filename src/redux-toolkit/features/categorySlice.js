@@ -16,6 +16,11 @@ const initialState = {
 const categorySlice = createSlice({
   name: "category",
   initialState,
+  reducers: {
+    resetLoading: (state) => {
+      state.isLoading = true;
+    },
+  },
   extraReducers: {
     [getCategoryData.pending]: (state, action) => {
       state.category = [];
@@ -32,3 +37,4 @@ const categorySlice = createSlice({
 });
 
 export default categorySlice.reducer;
+export const { resetLoading } = categorySlice.actions;

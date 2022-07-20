@@ -1,7 +1,10 @@
 import { CategoryCard } from "../../components";
 import "./home-page.css";
 import { useDispatch, useSelector } from "react-redux";
-import { getCategoryData } from "../../redux-toolkit/features/categorySlice";
+import {
+  getCategoryData,
+  resetLoading,
+} from "../../redux-toolkit/features/categorySlice";
 import { useEffect } from "react";
 import { GridLoader } from "react-spinners";
 
@@ -11,6 +14,10 @@ const HomePage = () => {
 
   useEffect(() => {
     dispatch(getCategoryData());
+
+    return () => {
+      dispatch(resetLoading());
+    };
   }, []);
 
   return (

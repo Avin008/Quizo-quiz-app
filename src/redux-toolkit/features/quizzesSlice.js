@@ -20,6 +20,11 @@ const initialState = {
 const quizzesSlice = createSlice({
   name: "quizzes",
   initialState,
+  reducers: {
+    resetLoading: (state) => {
+      state.isLoading = true;
+    },
+  },
   extraReducers: {
     [getQuizzes.pending]: (state) => {
       state.category = [];
@@ -36,3 +41,4 @@ const quizzesSlice = createSlice({
 });
 
 export default quizzesSlice.reducer;
+export const { resetLoading } = quizzesSlice.actions;

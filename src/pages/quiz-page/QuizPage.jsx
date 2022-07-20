@@ -4,7 +4,10 @@ import { useParams } from "react-router";
 import { useSelector, useDispatch } from "react-redux";
 import { GridLoader } from "react-spinners";
 import { useEffect } from "react";
-import { getQuizzes } from "../../redux-toolkit/features/quizzesSlice";
+import {
+  getQuizzes,
+  resetLoading,
+} from "../../redux-toolkit/features/quizzesSlice";
 const QuizPage = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -12,6 +15,10 @@ const QuizPage = () => {
 
   useEffect(() => {
     dispatch(getQuizzes(id));
+
+    return () => {
+      dispatch(resetLoading());
+    };
   }, []);
 
   return (
