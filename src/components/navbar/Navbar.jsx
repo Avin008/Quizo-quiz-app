@@ -48,13 +48,18 @@ const Navbar = () => {
             <BiUserCircle className="nav-icons" /> SIGN IN
           </Link>
         )}
-        <li className="nav-item">
+
+        {/* commented for later use */}
+
+        {/* <li className="nav-item">
           {false ? (
             <MdOutlineDarkMode className="nav-item nav-icons" />
           ) : (
             <MdOutlineLightMode className="nav-item nav-icons" />
           )}
-        </li>
+        </li> */}
+
+        {/* commented for later use */}
       </ul>
     </div>
   );

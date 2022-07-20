@@ -1,3 +1,4 @@
+import { FcCurrencyExchange } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import "./quiz-card.css";
 
@@ -11,7 +12,9 @@ const QuizCard = ({ data }) => {
         <div className="card-body">
           <h2 className="card-heading">{data.title}</h2>
           <h5 className="card-sub-heading">{data.questions} Questions</h5>
-          <h5 className="card-sub-heading">Win {data.coins} Coins </h5>
+          <h5 className="card-sub-heading">
+            Win {data.coins} Coins <FcCurrencyExchange />{" "}
+          </h5>
         </div>
       </div>
     </Link>

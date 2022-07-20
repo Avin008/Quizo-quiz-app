@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { BsArrowRightCircle } from "react-icons/bs";
 import "./signup-page.css";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { auth, db } from "../../firebase/firebaseConfig";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { toast } from "react-toastify";
@@ -107,7 +107,7 @@ const SignupPage = () => {
             </label>
           </div>
           <button
-            className="login-btn"
+            className="login-btn-primary"
             onClick={() => createUser(signupInfo.email, signupInfo.password)}
           >
             Sign Up

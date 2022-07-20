@@ -5,6 +5,7 @@
   box-shadow: var(--card-box-shadow);
   display: grid;
   grid-template-columns: 0.6fr 1fr;
+  background-color: var(--dark-mode);
 }
 
 .leaderboard-head {
@@ -49,7 +50,6 @@
   display: flex;
   justify-content: center;
   padding: 0.5rem;
-  background: var(--background-color);
 }
 
 .leaderboard-body-scores {
@@ -59,12 +59,17 @@
   justify-content: center;
 }
 
+
 .leaderboard-col {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
   padding: 0.5rem;
   gap: 0.5rem;
+}
+
+.leaderboard-col-section {
+  border-bottom: 1px solid var(--color-gray);
 }
 
 .leaderboard .coins {

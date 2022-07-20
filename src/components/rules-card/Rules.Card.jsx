@@ -8,16 +8,24 @@ const RulesCard = ({ toggleFunc }) => {
           <h2 className="card-heading">Rules</h2>
         </div>
         <div className="card-body">
-          <ul className="card-items">
+          <ol className="card-items">
             <li className="card-item">
-              1. for each currect qnswer 10 poinst awarded{" "}
+              1. This Quiz has 10 question in total.
             </li>
             <li className="card-item">
-              2. for each question 15 seconds counter
+              2. Player gets 15 seconds to answer each question.
             </li>
-            <li className="card-item">Lorem ipsum dolor sit amet. 3</li>
-            <li className="card-item">Lorem ipsum dolor sit amet. 4</li>
-          </ul>
+            <li className="card-item">
+              3. 10 points is awarded for the correct answer.
+            </li>
+            <li className="card-item">
+              4. No negative points for the wrong answer.
+            </li>
+            <li className="card-item">
+              5. If the player gives no answer, the right answer will be
+              highlighted after the timmer ends.
+            </li>
+          </ol>
         </div>
         <div className="card-footer">
           <button className="card-primary-btn" onClick={() => toggleFunc()}>

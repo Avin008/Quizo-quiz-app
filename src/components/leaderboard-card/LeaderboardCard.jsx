@@ -10,7 +10,7 @@ const LeaderboardCard = ({ data }) => {
           <div className="profile-img-container">
             <img
               src="https://static.vecteezy.com/system/resources/previews/002/275/847/original/male-avatar-profile-icon-of-smiling-caucasian-man-vector.jpg"
-              alt=""
+              alt="user-profile-pic"
               className="your-profile-pic"
             />
           </div>
@@ -25,19 +25,19 @@ const LeaderboardCard = ({ data }) => {
         <div className="leaderboard-heading">
           <h2>Leaderboard 🏆</h2>
         </div>
-        <div className="leaderboard-col">
+        <div className="leaderboard-col leaderboard-col-section">
           <h4>NAME</h4>
-          <h4>Scores</h4>
+          <h4>SCORES</h4>
           <h4>COINS</h4>
         </div>
         <div className="leaderboard-col">
           {data.yourLeaderboard.map((x) => (
             <>
-              <h6>{x.user}</h6>
-              <h6>{x.score}</h6>
-              <h6>
+              <h5>{x.user}</h5>
+              <h5>{x.score}</h5>
+              <h5>
                 <BsCoin /> {x.coins}
-              </h6>
+              </h5>
             </>
           ))}
         </div>

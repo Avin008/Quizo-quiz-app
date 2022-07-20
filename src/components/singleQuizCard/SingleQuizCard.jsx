@@ -32,9 +32,9 @@ const SingleQuizCard = ({ data }) => {
         setQuizState((prev) => ({
           ...prev,
           userAnswer: e,
-          score: prev.score + 1,
+          score: prev.score + 10,
           isAnswer: true,
-          coins: prev.coins + 1,
+          coins: prev.coins + 10,
         }));
       } else {
         setQuizState((prev) => ({ ...prev, userAnswer: e, isAnswer: true }));

@@ -3,7 +3,10 @@ import { RulesCard, ScoreCard, SingleQuizCard } from "../../components";
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getSingleQuiz } from "../../redux-toolkit/features/singleQuizSlice";
+import {
+  getSingleQuiz,
+  resetLoading,
+} from "../../redux-toolkit/features/singleQuizSlice";
 import { GridLoader } from "react-spinners";
 import { getScore } from "../../redux-toolkit/features/scoreSlice";
 
@@ -21,6 +24,10 @@ const SingleQuizPage = () => {
   useEffect(() => {
     dispatch(getSingleQuiz(id));
     dispatch(getScore(token));
+
+    return () => {
+      dispatch(resetLoading());
+    };
   }, []);
 
   return (

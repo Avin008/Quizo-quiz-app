@@ -83,11 +83,11 @@ const LoginPage = () => {
               Me
             </label>
           </div>
-          <button className="login-btn" onClick={loginUser}>
+          <button className="login-btn-primary" onClick={loginUser}>
             Login
           </button>
-          <button className="login-btn" onClick={guestLogin}>
-            <ClipLoader size={15} loading={loading} />
+          <button className="login-btn-secondary" onClick={guestLogin}>
+            <ClipLoader color="white" size={15} loading={loading} />
             {!loading && "Login As Guest"}
           </button>
 

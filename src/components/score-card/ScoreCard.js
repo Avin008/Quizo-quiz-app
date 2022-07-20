@@ -24,7 +24,7 @@ const ScoreCard = ({ data }) => {
           <h5 className="coins">Earned Coins</h5>
           <h3 className="questions-attempted">
             <FcCurrencyExchange />
-            {(data.score / 10) * 100}
+            {data.score}
           </h3>
         </div>
         <div className="card-actions">
