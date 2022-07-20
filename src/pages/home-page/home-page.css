@@ -7,7 +7,7 @@
 }
 
 .homepage-title {
-  color: white;
+  color: var(--color-white);
   font-weight: 600;
 }
 

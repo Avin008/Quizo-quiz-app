@@ -78,7 +78,7 @@
 }
 
 .single-quiz-card .next-question-btn {
-  padding: 0.3rem 1rem;
+  padding: 0.4rem 1rem;
   border: 0;
   cursor: pointer;
 }
@@ -86,4 +86,5 @@
 .single-quiz-card .card-action-container {
   display: flex;
   gap: 1rem;
+  align-items: center;
 }
