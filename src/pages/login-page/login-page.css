@@ -5,7 +5,7 @@
 }
 
 .form {
-  width: 320px;
+  width: 20rem;
   background: var(--dark-mode);
   display: flex;
   flex-direction: column;

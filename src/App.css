@@ -4,9 +4,10 @@
   --primary-color: white;
   --secondary-color: black;
   --color-white: white;
+  --color-gray: gray;
 }
 
 .link {
   text-decoration: none;
-  color: white;
+  color: var(--color-white);
 }

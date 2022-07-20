@@ -1,6 +1,9 @@
+:root {
+  --nav-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
 .navbar {
-  border: 1px solid transparent;
-  height: 60px;
+  height: 3.75rem;
   color: var(--color-white);
   display: flex;
   align-items: center;
@@ -12,7 +15,7 @@
   right: 0;
   z-index: 4;
   background-color: var(--dark-mode);
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;;
+  box-shadow: var(--nav-shadow);
 }
 
 .nav-items {
@@ -28,7 +31,7 @@
   align-items: center;
   gap: 0.2rem;
   text-decoration: none;
-  color: white;
+  color: var(--color-white);
 }
 
 .brand {
@@ -43,12 +46,6 @@
 
 .nav-dark-mode {
   background-color: var(--dark-mode);
-  transition: 10ms;
-}
-
-.nav-light-mode {
-  background-color: var(--light-mode);
-  transition: 10ms;
 }
 
 .nav-icons {
@@ -59,3 +56,4 @@
 .nav-item:hover {
   cursor: pointer;
 }
+
