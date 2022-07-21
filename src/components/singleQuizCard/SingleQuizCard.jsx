@@ -143,7 +143,7 @@ const SingleQuizCard = ({ data }) => {
           >
             {data.singleQuizData.mcq.length <= quizState.questionNo + 1 &&
             quizState.isAnswer
-              ? "View Reult"
+              ? "View Result"
               : "Next Ques"}
           </button>
         </div>

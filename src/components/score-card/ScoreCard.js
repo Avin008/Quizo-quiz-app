@@ -16,7 +16,7 @@ const ScoreCard = ({ data }) => {
           <img className="img" src={trophy} alt="trophy" />
         </div>
         <h3 className="greetings">
-          {data.score < 0 ? "Try Again" : "Congratulations"}
+          {data.score <= 0 ? "Try Again" : "Congratulations"}
         </h3>
         <div className="score-container">
           <h5 className="your-score">Your Score</h5>
