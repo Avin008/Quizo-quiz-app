@@ -15,23 +15,28 @@ const ScoreCard = ({ data }) => {
         <div className="img-container">
           <img className="img" src={trophy} alt="trophy" />
         </div>
-        <h3 className="greetings">Congratulations</h3>
+        <h3 className="greetings">
+          {data.score < 0 ? "Try Again" : "Congratulations"}
+        </h3>
         <div className="score-container">
           <h5 className="your-score">Your Score</h5>
-          <h3 className="user-score">{data.score} / 10</h3>
+          <h3 className="user-score">{data.score} / 50</h3>
         </div>
         <div className="coin-container">
           <h5 className="coins">Earned Coins</h5>
           <h3 className="questions-attempted">
             <FcCurrencyExchange />
-            {data.score}
+            {data.coins}
           </h3>
         </div>
         <div className="card-actions">
           <button className="card-btn" onClick={() => refreshPage()}>
             Play Again
           </button>
-          <button className="card-btn" onClick={() => navigate("/")}>
+          <button
+            className="card-btn primary-btn"
+            onClick={() => navigate("/")}
+          >
             Home
           </button>
         </div>

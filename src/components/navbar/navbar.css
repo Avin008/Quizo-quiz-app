@@ -1,5 +1,6 @@
 :root {
   --nav-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  --active-link: rgb(220, 220, 182);
 }
 
 .navbar {
@@ -55,5 +56,9 @@
 
 .nav-item:hover {
   cursor: pointer;
+}
+
+.active {
+  color: var(--active-link)
 }
 

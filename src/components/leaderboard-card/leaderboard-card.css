@@ -6,6 +6,7 @@
   display: grid;
   grid-template-columns: 0.6fr 1fr;
   background-color: var(--dark-mode);
+  border-radius: 0.3rem;
 }
 
 .leaderboard-head {
@@ -77,3 +78,4 @@
   align-items: center;
   gap: 0.2rem;
 }
+

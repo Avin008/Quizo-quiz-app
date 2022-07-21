@@ -54,6 +54,7 @@
     padding: 0.5rem 1rem;
     border: 0;
     cursor: pointer;
+    font-weight: 600;
 }
 
 .score-card-container {
@@ -70,4 +71,8 @@
 
 .score-card, .your-score, user-score, coins, question-attepted {
     color: var(--color-white);
+}
+
+.score-card .primary-btn {
+    background-color: var(--primary-color);
 }

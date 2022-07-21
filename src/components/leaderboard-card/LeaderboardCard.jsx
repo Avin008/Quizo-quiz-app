@@ -6,7 +6,7 @@ const LeaderboardCard = ({ data }) => {
     <div className="leaderboard">
       <div className="leaderboard-head">
         <div className="your-score-card">
-          <h3>Your Score</h3>
+          <h4 className="score-heading">Your Score</h4>
           <div className="profile-img-container">
             <img
               src="https://static.vecteezy.com/system/resources/previews/002/275/847/original/male-avatar-profile-icon-of-smiling-caucasian-man-vector.jpg"

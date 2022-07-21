@@ -11,7 +11,7 @@ const CategoryCard = ({ data }) => {
         </div>
         <div className="card-body">
           <h2 className="card-heading">{data.categoryName}</h2>
-          <h5 className="card-sub-heading">30 Questions</h5>
+          <h5 className="card-sub-heading">15 Questions</h5>
           <h5 className="card-sub-heading">
             Win 300 Coins <FcCurrencyExchange className="card-icon" />
           </h5>

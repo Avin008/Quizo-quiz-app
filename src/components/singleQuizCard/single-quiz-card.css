@@ -1,5 +1,6 @@
 :root {
   --single-quiz-card-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  --primary-color: rgb(245, 163, 1);
 }
 
 .single-quiz-card {
@@ -81,10 +82,16 @@
   color: var(--color-white);
 }
 
-.single-quiz-card .next-question-btn {
+.single-quiz-card .question-btn {
   padding: 0.4rem 1rem;
   border: 0;
   cursor: pointer;
+  font-weight: 600;
+}
+
+.single-quiz-card .next-question-btn {
+  background-color: var(--primary-color);
+  color: var(--color-black);
 }
 
 .single-quiz-card .card-action-container {

@@ -5,7 +5,7 @@ import {
   MdOutlineLightMode,
   MdOutlineDarkMode,
 } from "../../icons/icons";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
 import { VscSignOut } from "react-icons/vsc";
@@ -35,18 +35,18 @@ const Navbar = () => {
         <h2 className="brand-name">Quizo</h2>
       </div>
       <ul className="nav-items">
-        <Link to="/" className="nav-item">
+        <NavLink to="/" className="nav-item">
           HOME
-        </Link>
-        <Link to="leaderboard" className="nav-item">
+        </NavLink>
+        <NavLink to="leaderboard" className="nav-item">
           LEADERBOARD
-        </Link>
+        </NavLink>
         {authStatus ? (
           <VscSignOut className="nav-icons" onClick={() => signoutUser()} />
         ) : (
-          <Link to="login" className="nav-item">
+          <NavLink to="login" className="nav-item">
             <BiUserCircle className="nav-icons" /> SIGN IN
-          </Link>
+          </NavLink>
         )}
 
         {/* commented for later use */}

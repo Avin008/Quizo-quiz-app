@@ -34,7 +34,7 @@ const SingleQuizCard = ({ data }) => {
           userAnswer: e,
           score: prev.score + 10,
           isAnswer: true,
-          coins: prev.coins + 10,
+          coins: prev.coins + 20,
         }));
       } else {
         setQuizState((prev) => ({ ...prev, userAnswer: e, isAnswer: true }));
@@ -134,10 +134,13 @@ const SingleQuizCard = ({ data }) => {
           </h4>
         </div>
         <div className="card-action-container">
-          <button className="next-question-btn" onClick={() => navigate("/")}>
+          <button className="question-btn" onClick={() => navigate("/")}>
             Quit
           </button>
-          <button className="next-question-btn" onClick={() => nextQuestFunc()}>
+          <button
+            className="question-btn next-question-btn"
+            onClick={() => nextQuestFunc()}
+          >
             {data.singleQuizData.mcq.length <= quizState.questionNo + 1 &&
             quizState.isAnswer
               ? "View Reult"
