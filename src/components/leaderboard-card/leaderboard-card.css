@@ -1,3 +1,7 @@
+:root {
+  --leaderboard-body-color: #222222;
+}
+
 .leaderboard {
   width: 37rem;
   border: 1px solid var(--color-gray);
@@ -6,7 +10,6 @@
   display: grid;
   grid-template-columns: 0.6fr 1fr;
   background-color: var(--dark-mode);
-  border-radius: 0.3rem;
 }
 
 .leaderboard-head {
@@ -17,7 +20,7 @@
 }
 
 .leaderboard-body {
-  background: var(--color-black);
+  background: var(--leaderboard-body-color);
   color: var(--color-white);
 }
 
@@ -37,6 +40,7 @@
 
 .your-profile-pic {
   width: 100%;
+  height: auto;
   border-radius: 50%;
   border: 2px solid var(--color-white);
 }
