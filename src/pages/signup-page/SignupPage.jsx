@@ -8,10 +8,12 @@ import { toast } from "react-toastify";
 import { doc, setDoc } from "firebase/firestore";
 import { setAuth } from "../../redux-toolkit/features/authSlice";
 import { useDispatch } from "react-redux";
+import { ClipLoader } from "react-spinners";
 
 const SignupPage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [loadingBtn, setLoadingBtn] = useState(false);
   const [signupInfo, setSignupInfo] = useState({
     firstName: "",
     lastName: "",
@@ -25,6 +27,7 @@ const SignupPage = () => {
   };
 
   const createUser = async (email, password) => {
+    setLoadingBtn(true);
     createUserWithEmailAndPassword(auth, email, password)
       .then((user) => {
         navigate("/");
@@ -33,6 +36,7 @@ const SignupPage = () => {
         dispatch(setAuth({ uid: user.user.uid }));
       })
       .catch((error) => {
+        setLoadingBtn(false);
         toast.error(error.code);
         // ..
       });
@@ -110,7 +114,8 @@ const SignupPage = () => {
             className="login-btn-primary"
             onClick={() => createUser(signupInfo.email, signupInfo.password)}
           >
-            Sign Up
+            <ClipLoader color="black" size={15} loading={loadingBtn} />
+            {!loadingBtn && "sign up"}
           </button>
           <Link className="link signup-btn" to="/login">
             Already had a Account
