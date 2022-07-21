@@ -1,10 +1,15 @@
 import { Outlet } from "react-router";
 import { Navbar } from "../../components";
 import "./shared-layout.css";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useEffect } from "react";
 
 const SharedLayout = () => {
+  useEffect(() => {
+    document.title = "Quizo";
+  }, []);
+
   return (
     <>
       <Navbar />

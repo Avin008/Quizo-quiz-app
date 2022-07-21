@@ -1,4 +1,4 @@
-import { BsCoin } from "react-icons/bs";
+import { BsCoin } from "../../icons/icons";
 import "./leaderboard-card.css";
 
 const LeaderboardCard = ({ data }) => {

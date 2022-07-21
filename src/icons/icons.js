@@ -6,6 +6,7 @@ import { MdCheckCircleOutline } from "react-icons/md";
 import { CgCloseO } from "react-icons/cg";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { BsArrowRightCircle } from "react-icons/bs";
+import { BsCoin } from "react-icons/bs";
 
 export {
   MdOutlineDarkMode,
@@ -17,4 +18,5 @@ export {
   AiOutlineCloseCircle,
   CgCloseO,
   BsArrowRightCircle,
+  BsCoin,
 };

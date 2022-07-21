@@ -11,13 +11,8 @@ import {
   QuizPage,
 } from "./pages";
 import { RequireAuth } from "./components";
-import { useEffect } from "react";
 
 function App() {
-  useEffect(() => {
-    document.title = "Quizo";
-  }, []);
-
   return (
     <div className="App">
       <Routes>

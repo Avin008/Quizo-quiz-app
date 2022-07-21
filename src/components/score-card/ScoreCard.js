@@ -1,6 +1,6 @@
 import "./score-card.css";
 import trophy from "../../assets/img/trophy.png";
-import { FcCurrencyExchange } from "react-icons/fc";
+import { FcCurrencyExchange } from "../../icons/icons";
 import { useNavigate } from "react-router-dom";
 
 const ScoreCard = ({ data }) => {

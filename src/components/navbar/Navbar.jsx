@@ -5,7 +5,7 @@ import {
   MdOutlineLightMode,
   MdOutlineDarkMode,
 } from "../../icons/icons";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
 import { VscSignOut } from "react-icons/vsc";

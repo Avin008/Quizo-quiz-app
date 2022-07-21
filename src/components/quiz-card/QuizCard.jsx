@@ -1,6 +1,5 @@
-import { FcCurrencyExchange } from "react-icons/fc";
+import { FcCurrencyExchange } from "../../icons/icons";
 import { Link } from "react-router-dom";
-import "./quiz-card.css";
 
 const QuizCard = ({ data }) => {
   return (
