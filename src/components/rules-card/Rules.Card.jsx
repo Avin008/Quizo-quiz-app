@@ -10,7 +10,7 @@ const RulesCard = ({ toggleFunc }) => {
         <div className="card-body">
           <ol className="card-items">
             <li className="card-item">
-              1. This Quiz has 10 question in total.
+              1. This Quiz has 5 questions in total.
             </li>
             <li className="card-item">
               2. Player gets 15 seconds to answer each question.

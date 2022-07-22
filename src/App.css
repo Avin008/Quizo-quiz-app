@@ -1,8 +1,8 @@
 :root {
   --light-mode: #f5a301;
   --dark-mode: #3a2d32;
-  --color-white: white;
-  --color-gray: gray;
+  --color-white: #ffffff;
+  --color-gray: #808080;
 }
 
 .link {
