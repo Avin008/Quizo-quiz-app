@@ -23,7 +23,7 @@ const SignupPage = () => {
 
   const createDoc = async (user) => {
     const collRef = doc(db, "users", user.user.uid);
-    setDoc(collRef, { coins: 55, score: 99, user: signupInfo.firstName });
+    setDoc(collRef, { coins: 0, score: 0, user: signupInfo.firstName });
   };
 
   const createUser = async (email, password) => {
@@ -42,85 +42,98 @@ const SignupPage = () => {
       });
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    createUser(signupInfo.email, signupInfo.password);
+  };
+
   return (
     <div className="signup-page">
       <div className="form-container">
         <div className="form">
-          <h1 className="form-heading">Sign Up</h1>
-          <div className="input-group">
-            <label htmlFor="email">First Name</label>
-            <input
-              className="input"
-              type="text"
-              placeholder="john"
-              onChange={(e) =>
-                setSignupInfo((prev) => ({
-                  ...prev,
-                  firstName: e.target.value,
-                }))
-              }
-            />
-          </div>
-          <div className="input-group">
-            <label htmlFor="lastname">Last Name</label>
-            <input
-              className="input"
-              type="text"
-              placeholder="Doe"
-              onChange={(e) =>
-                setSignupInfo((prev) => ({
-                  ...prev,
-                  lastName: e.target.value,
-                }))
-              }
-            />
-          </div>
-          <div className="input-group">
-            <label htmlFor="email">Email</label>
-            <input
-              className="input"
-              type="email"
-              placeholder="johndoe@gmail.com"
-              onChange={(e) =>
-                setSignupInfo((prev) => ({
-                  ...prev,
-                  email: e.target.value,
-                }))
-              }
-            />
-          </div>
-          <div className="input-group">
-            <label htmlFor="password">Password</label>
-            <input
-              className="input"
-              type="password"
-              placeholder="*********"
-              onChange={(e) =>
-                setSignupInfo((prev) => ({
-                  ...prev,
-                  password: e.target.value,
-                }))
-              }
-            />
-          </div>
-          <div className="input-group checkbox">
-            <label className="label" htmlFor="checkbox">
-              {" "}
-              <input type="checkbox" name="checkbox" id="checkbox" /> I agree to
-              all terms & conditions
-            </label>
-          </div>
-          <button
-            className="login-btn-primary"
-            onClick={() => createUser(signupInfo.email, signupInfo.password)}
-          >
-            <ClipLoader color="black" size={15} loading={loadingBtn} />
-            {!loadingBtn && "sign up"}
-          </button>
-          <Link className="link signup-btn" to="/login">
-            Already had a Account
-            <BsArrowRightCircle />
-          </Link>
+          <form className="form" onSubmit={handleSubmit}>
+            <h1 className="form-heading">Sign Up</h1>
+            <div className="input-group">
+              <label htmlFor="email">First Name</label>
+              <input
+                className="input"
+                type="text"
+                placeholder="john"
+                onChange={(e) =>
+                  setSignupInfo((prev) => ({
+                    ...prev,
+                    firstName: e.target.value,
+                  }))
+                }
+                required
+              />
+            </div>
+            <div className="input-group">
+              <label htmlFor="lastname">Last Name</label>
+              <input
+                className="input"
+                type="text"
+                placeholder="Doe"
+                onChange={(e) =>
+                  setSignupInfo((prev) => ({
+                    ...prev,
+                    lastName: e.target.value,
+                  }))
+                }
+                required
+              />
+            </div>
+            <div className="input-group">
+              <label htmlFor="email">Email</label>
+              <input
+                className="input"
+                type="email"
+                placeholder="johndoe@gmail.com"
+                onChange={(e) =>
+                  setSignupInfo((prev) => ({
+                    ...prev,
+                    email: e.target.value,
+                  }))
+                }
+                required
+              />
+            </div>
+            <div className="input-group">
+              <label htmlFor="password">Password</label>
+              <input
+                className="input"
+                type="password"
+                placeholder="*********"
+                onChange={(e) =>
+                  setSignupInfo((prev) => ({
+                    ...prev,
+                    password: e.target.value,
+                  }))
+                }
+                required
+              />
+            </div>
+            <div className="input-group checkbox">
+              <label className="label" htmlFor="checkbox">
+                {" "}
+                <input
+                  type="checkbox"
+                  name="checkbox"
+                  id="checkbox"
+                  required
+                />{" "}
+                I agree to all terms & conditions
+              </label>
+            </div>
+            <button className="login-btn-primary">
+              <ClipLoader color="black" size={15} loading={loadingBtn} />
+              {!loadingBtn && "sign up"}
+            </button>
+            <Link className="link signup-btn" to="/login">
+              Already had a Account
+              <BsArrowRightCircle />
+            </Link>
+          </form>
         </div>
       </div>
     </div>
