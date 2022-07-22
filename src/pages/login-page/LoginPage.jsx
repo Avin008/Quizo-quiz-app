@@ -62,6 +62,7 @@ const LoginPage = () => {
               onChange={(e) =>
                 setLoginInfo((prev) => ({ ...prev, email: e.target.value }))
               }
+              required
             />
           </div>
           <div className="input-group">
@@ -74,6 +75,7 @@ const LoginPage = () => {
               onChange={(e) =>
                 setLoginInfo((prev) => ({ ...prev, password: e.target.value }))
               }
+              required
             />
           </div>
           <div className="input-group checkbox">
