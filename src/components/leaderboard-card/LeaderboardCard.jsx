@@ -33,7 +33,7 @@ const LeaderboardCard = ({ data }) => {
         <div className="leaderboard-col">
           {data.yourLeaderboard.map((x) => (
             <>
-              <h5>{x.user}</h5>
+              <h5 className="user-name">{x.user}</h5>
               <h5>{x.score}</h5>
               <h5>
                 <BsCoin /> {x.coins}

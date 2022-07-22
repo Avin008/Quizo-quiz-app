@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { collection, getDocs, loadBundle } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase/firebaseConfig";
 
 export const getLeaderboard = createAsyncThunk("quiz/leaderboard", async () => {
@@ -20,7 +20,7 @@ const leaderboardSlice = createSlice({
       state.leaderboard = [];
     },
     [getLeaderboard.fulfilled]: (state, action) => {
-      state.leaderboard = [...action.payload];
+      state.leaderboard = [...action.payload].sort((a, b) => b.score - a.score);
     },
     [getLeaderboard.rejected]: (state, action) => {
       console.log("rejected");
