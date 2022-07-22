@@ -20,7 +20,7 @@ const leaderboardSlice = createSlice({
       state.leaderboard = [];
     },
     [getLeaderboard.fulfilled]: (state, action) => {
-      state.leaderboard = [...action.payload];
+      state.leaderboard = [...action.payload].sort((a, b) => b.score - a.score);
     },
     [getLeaderboard.rejected]: (state, action) => {
       console.log("rejected");

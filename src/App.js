@@ -9,6 +9,7 @@ import {
   SignupPage,
   SingleQuizPage,
   QuizPage,
+  NotFoundPage,
 } from "./pages";
 import { RequireAuth } from "./components";
 
@@ -44,6 +45,7 @@ function App() {
           />
           <Route path="login" element={<LoginPage />} />
           <Route path="signup" element={<SignupPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
     </div>
