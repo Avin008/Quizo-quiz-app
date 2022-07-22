@@ -1,0 +1,64 @@
+:root {
+  --nav-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  --active-link: rgb(220, 220, 182);
+}
+
+.navbar {
+  height: 3.75rem;
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  background-color: var(--dark-mode);
+  box-shadow: var(--nav-shadow);
+}
+
+.nav-items {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-weight: 600;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.brand-icon {
+  font-size: 2rem;
+}
+
+.nav-dark-mode {
+  background-color: var(--dark-mode);
+}
+
+.nav-icons {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.nav-item:hover {
+  cursor: pointer;
+}
+
+.active {
+  color: var(--active-link)
+}
+

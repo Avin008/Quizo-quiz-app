@@ -1,0 +1,7 @@
+.quiz-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  align-items: center;
+}

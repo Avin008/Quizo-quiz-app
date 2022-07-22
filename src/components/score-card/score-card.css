@@ -1,0 +1,78 @@
+:root {
+    --container-focus-blr: rgba(24, 16, 16, 0.5);
+}
+
+.score-card {
+    border: 1px solid var(--color-gray);
+    width: 18.75rem;
+    height: 25rem;
+    box-shadow: var(--card-box-shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    border-radius: 0.2rem;
+    background-color: var(--dark-mode);
+}
+
+.score-card .card-heading {
+    color: var(--color-white);
+    margin-top: 1rem;
+}
+
+.score-card .img-container {
+    width: 40%;
+    height: auto;
+}
+
+.score-card .img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.score-card .score-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.score-card .coin-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.score-card .card-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.score-card .card-btn {
+    padding: 0.5rem 1rem;
+    border: 0;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.score-card-container {
+    background-color: var(--container-focus-blr);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.score-card, .your-score, user-score, coins, question-attepted {
+    color: var(--color-white);
+}
+
+.score-card .primary-btn {
+    background-color: var(--primary-color);
+}
