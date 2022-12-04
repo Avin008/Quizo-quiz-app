@@ -5,7 +5,7 @@
 
 .single-quiz-card {
   background: var(--dark-mode);
-  max-width: 37.5rem;
+  width: 40rem;
   height: fit-content;
   box-shadow: var(--single-quiz-card-shadow);
 }
@@ -100,8 +100,20 @@
   align-items: center;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 680px) {
   .single-quiz-card {
+    max-width: 30rem;
+    margin: 1rem;
+  }
+
+  .single-quiz-card .card-action-container {
+    gap: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .single-quiz-card {
+    max-width: 22rem;
     margin: 1rem;
   }
 
