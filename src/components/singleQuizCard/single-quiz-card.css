@@ -5,9 +5,9 @@
 
 .single-quiz-card {
   background: var(--dark-mode);
-  width: 37.5rem;
-  height: 21.87rem;
-  box-shadow: var(--single-quiz-card-shadow)
+  max-width: 37.5rem;
+  height: fit-content;
+  box-shadow: var(--single-quiz-card-shadow);
 }
 
 .single-quiz-card .card-head {
@@ -42,7 +42,7 @@
   padding: 0.8rem;
   display: flex;
   flex-direction: column;
-  gap: 0.7rem;
+  gap: 1rem;
 }
 
 .single-quiz-card .question {
@@ -98,4 +98,14 @@
   display: flex;
   gap: 1rem;
   align-items: center;
+}
+
+@media screen and (max-width: 650px) {
+  .single-quiz-card {
+    margin: 1rem;
+  }
+
+  .single-quiz-card .card-action-container {
+    gap: 0.5rem;
+  }
 }
