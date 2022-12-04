@@ -30,8 +30,6 @@ const Navbar = () => {
       });
   };
 
-  console.log(darkMode);
-
   return (
     <div className={`navbar`}>
       <div className="brand">
@@ -52,20 +50,6 @@ const Navbar = () => {
             <BiUserCircle className="nav-icons" /> SIGN IN
           </NavLink>
         )}
-
-        <li className="nav-item dark-mode-btn">
-          {!darkMode ? (
-            <MdOutlineDarkMode
-              onClick={() => dispatch(toggleTheme())}
-              className="nav-item nav-icons"
-            />
-          ) : (
-            <MdOutlineLightMode
-              onClick={() => dispatch(toggleTheme())}
-              className="nav-item nav-icons"
-            />
-          )}
-        </li>
       </ul>
     </div>
   );
