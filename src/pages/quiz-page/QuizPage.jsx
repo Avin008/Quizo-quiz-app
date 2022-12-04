@@ -24,7 +24,9 @@ const QuizPage = () => {
   return (
     <div className="quiz-page">
       <GridLoader color="white" loading={isLoading} />
-      {!isLoading && quizzes.map((x) => <QuizCard data={x} key={x.qid} />)}
+      <div className="quiz-container">
+        {!isLoading && quizzes.map((x) => <QuizCard data={x} key={x.qid} />)}
+      </div>
     </div>
   );
 };

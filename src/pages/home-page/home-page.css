@@ -5,7 +5,7 @@
 
 .category-container {
   margin-top: 6rem;
-  gap: 2rem;
+  gap: 3rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
