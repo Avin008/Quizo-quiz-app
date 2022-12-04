@@ -53,7 +53,7 @@ const Navbar = () => {
           </NavLink>
         )}
 
-        <li className="nav-item">
+        <li className="nav-item dark-mode-btn">
           {!darkMode ? (
             <MdOutlineDarkMode
               onClick={() => dispatch(toggleTheme())}

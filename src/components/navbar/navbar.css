@@ -59,6 +59,24 @@
 }
 
 .active {
-  color: var(--active-link)
+  color: var(--active-link);
 }
 
+@media screen and (max-width: 860px) {
+  .nav-items {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    justify-content: space-around;
+    border-top: 1px solid gray;
+    padding: 1rem;
+  }
+
+  .dark-mode-btn {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+  }
+
+}
