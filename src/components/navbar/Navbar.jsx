@@ -12,10 +12,12 @@ import { VscSignOut } from "react-icons/vsc";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase/firebaseConfig";
 import { removeAuth } from "../../redux-toolkit/features/authSlice";
+import { toggleTheme } from "../../redux-toolkit/features/themeSlice";
 
 const Navbar = () => {
   const dispatch = useDispatch();
   const { authStatus } = useSelector((store) => store.auth);
+  const { darkMode } = useSelector((store) => store.themeSlice);
 
   const signoutUser = async () => {
     await signOut(auth)
@@ -27,6 +29,8 @@ const Navbar = () => {
         toast.error("signout failed");
       });
   };
+
+  console.log(darkMode);
 
   return (
     <div className={`navbar`}>
@@ -49,17 +53,19 @@ const Navbar = () => {
           </NavLink>
         )}
 
-        {/* commented for later use */}
-
-        {/* <li className="nav-item">
-          {false ? (
-            <MdOutlineDarkMode className="nav-item nav-icons" />
+        <li className="nav-item">
+          {!darkMode ? (
+            <MdOutlineDarkMode
+              onClick={() => dispatch(toggleTheme())}
+              className="nav-item nav-icons"
+            />
           ) : (
-            <MdOutlineLightMode className="nav-item nav-icons" />
+            <MdOutlineLightMode
+              onClick={() => dispatch(toggleTheme())}
+              className="nav-item nav-icons"
+            />
           )}
-        </li> */}
-
-        {/* commented for later use */}
+        </li>
       </ul>
     </div>
   );

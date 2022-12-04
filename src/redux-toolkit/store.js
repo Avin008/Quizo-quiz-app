@@ -5,6 +5,7 @@ import leaderboardSlice from "./features/leaderboardSlice";
 import quizzesSlice from "./features/quizzesSlice";
 import scoreSlice from "./features/scoreSlice";
 import singleQuizSlice from "./features/singleQuizSlice";
+import themeSlice from "./features/themeSlice";
 
 export const store = configureStore({
   reducer: {
@@ -14,5 +15,6 @@ export const store = configureStore({
     singleQuiz: singleQuizSlice,
     score: scoreSlice,
     leaderboard: leaderboardSlice,
+    themeSlice: themeSlice,
   },
 });
