@@ -12,10 +12,12 @@ import { VscSignOut } from "react-icons/vsc";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase/firebaseConfig";
 import { removeAuth } from "../../redux-toolkit/features/authSlice";
+import { toggleTheme } from "../../redux-toolkit/features/themeSlice";
 
 const Navbar = () => {
   const dispatch = useDispatch();
   const { authStatus } = useSelector((store) => store.auth);
+  const { darkMode } = useSelector((store) => store.themeSlice);
 
   const signoutUser = async () => {
     await signOut(auth)
@@ -48,18 +50,6 @@ const Navbar = () => {
             <BiUserCircle className="nav-icons" /> SIGN IN
           </NavLink>
         )}
-
-        {/* commented for later use */}
-
-        {/* <li className="nav-item">
-          {false ? (
-            <MdOutlineDarkMode className="nav-item nav-icons" />
-          ) : (
-            <MdOutlineLightMode className="nav-item nav-icons" />
-          )}
-        </li> */}
-
-        {/* commented for later use */}
       </ul>
     </div>
   );

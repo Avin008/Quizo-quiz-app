@@ -23,8 +23,14 @@ const QuizPage = () => {
 
   return (
     <div className="quiz-page">
-      <GridLoader color="white" loading={isLoading} />
-      {!isLoading && quizzes.map((x) => <QuizCard data={x} key={x.qid} />)}
+      {isLoading && (
+        <div className="spinner">
+          <GridLoader color="white" loading={isLoading} />
+        </div>
+      )}
+      <div className="quiz-container">
+        {!isLoading && quizzes.map((x) => <QuizCard data={x} key={x.qid} />)}
+      </div>
     </div>
   );
 };

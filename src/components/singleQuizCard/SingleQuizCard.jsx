@@ -103,7 +103,7 @@ const SingleQuizCard = ({ data }) => {
         </div>
       </div>
       <div className="card-body">
-        <div style={{ height: "45px" }}>
+        <div>
           <h3 className="question">
             {quizState.questionNo + 1}.{" "}
             {data.singleQuizData.mcq[quizState.questionNo].question}

@@ -1,5 +1,5 @@
 import "./score-card.css";
-import trophy from "../../assets/img/trophy.png";
+import trophy from "../../assets/img/trophy-win.png";
 import { FcCurrencyExchange } from "../../icons/icons";
 import { useNavigate } from "react-router-dom";
 

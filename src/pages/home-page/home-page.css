@@ -1,18 +1,34 @@
 .homepage {
-  height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-}
-
-.homepage-title {
-  color: var(--color-white);
-  font-weight: 600;
+  position: relative;
+  height: 100vh;
 }
 
 .category-container {
-  display: flex;
+  margin-top: 6rem;
   gap: 3rem;
-  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+}
+
+.spinner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+@media screen and (max-width: 855px) {
+  .category-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding-bottom: 5rem;
+  }
 }

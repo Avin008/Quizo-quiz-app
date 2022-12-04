@@ -22,7 +22,11 @@ const HomePage = () => {
 
   return (
     <div className="homepage">
-      <GridLoader color="white" loading={isLoading} />
+      {isLoading && (
+        <div className="spinner">
+          <GridLoader color="white" loading={isLoading} />
+        </div>
+      )}
       {!isLoading && (
         <div className="category-container">
           {category.map((x) => (

@@ -12,13 +12,13 @@
 
 .rules-card {
   width: fit-content;
-  height: 21.8rem;
+  height: fit-content;
   background-color: var(--dark-mode);
   position: relative;
   border-radius: 0.5rem;
   box-shadow: var(--card-box-shadow);
-  height: 300px;
   padding: 0.5rem;
+  margin: 1rem;
 }
 
 .rules-card .card-head {
@@ -51,9 +51,6 @@
 .rules-card .card-footer {
   display: flex;
   justify-content: flex-end;
-  position: absolute;
-  bottom: 0;
-  right: 0;
   padding: 1rem;
 }
 
